@@ -1,0 +1,188 @@
+<Window         
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:M365NetworkChecker.Resources"
+ WindowStartupLocation="CenterScreen"
+    Title="MainWindow" Height="550" Width="800"
+    ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Make sure that all file names are Case Sensitive! -->
+				<ResourceDictionary Source="/Resources/CenterPillTabs.xaml"/>
+                <ResourceDictionary Source="/Resources/Modern.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="#002E8A" BorderThickness="2">
+        <Grid Margin="0,0,0,0">
+            <Canvas x:Name="startCanvas" HorizontalAlignment="Left" Height="518" Margin="0,0,-2,0" VerticalAlignment="Top" Width="792" Background="#004275" Panel.ZIndex="300">
+                <TextBlock HorizontalAlignment="Center" Text="M365 Endpoint Network Analyzer" VerticalAlignment="Top" FontSize="36" Width="739" TextAlignment="Center" FontFamily="Segoe UI Light" Canvas.Top="29" Canvas.Left="10" Height="64" Foreground="White"/>
+                <TextBlock HorizontalAlignment="Center" Text="Select your cloud endpoint" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Light" Width="739" TextAlignment="Center" Height="26" Canvas.Top="93" Canvas.Left="10" Foreground="White"/>
+                <ListBox x:Name="startCloudListBox" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF1D3245" Foreground="#FFE8EDF9" FontSize="18" Width="552" Height="282" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Canvas.Left="109" Canvas.Top="124"/>
+                <Button x:Name="startBegin" Style="{DynamicResource modernButton}" Width="209" Height="69" Canvas.Left="573" Canvas.Top="439">
+                    <TextBlock Text="Begin" FontSize="24" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+                </Button>
+                <CheckBox x:Name="startOfflineMode" Content="Offline mode" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="33" Width="149"  Grid.ColumnSpan="2" VerticalContentAlignment="Center" Canvas.Left="10" Canvas.Top="406" Foreground="White"/>
+                <TextBlock x:Name="startOfflineDesc" Text="Select this option if there is no connectivity to doc.microsoft.com and gitbub.com. Please consider that this option may reflect the wrong endpoints since is not getting updated data." HorizontalAlignment="Left" Foreground="LightBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" Grid.ColumnSpan="2" Canvas.Left="10" Canvas.Top="444"/>
+            </Canvas>
+            <TabControl x:Name="menuNavigation" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="2" Style="{DynamicResource ResourceKey=styleTabControl}">
+                <!--Option tab-->
+                <TabItem x:Name="optionsTab" Header="Options" Style="{DynamicResource ResourceKey=styleTabItemLeft}">
+                    <Grid Background="#FFF" Margin="0,0,0,0">
+
+                        <TextBlock x:Name="endpointName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Select Azure Service Endpoints" VerticalAlignment="Top" Height="32" Width="436" FontSize="20" Margin="26,10,0,0"/>
+                        <!--Radio buttons to select the test to do-->
+                        <StackPanel x:Name="endpointsPanel" HorizontalAlignment="Left" Margin="26,42,0,0" VerticalAlignment="Top" Height="230" Width="436" />
+                        <StackPanel x:Name="connectionPanel" HorizontalAlignment="Left" Margin="467,10,0,0" VerticalAlignment="Top" Width="305" Height="126">
+                            <!--Checkbox to see which endpoints to hit-->
+                            <!--Checkbox to see which endpoints to hit-->
+                            <!--Checkbox to see which endpoints to hit-->
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Select connection tests" VerticalAlignment="Top" Height="30" Width="285" FontSize="20" Margin="10,0,0,0"/>
+                            <CheckBox x:Name="domain" Content="Domain Names" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="25" Margin="10,0,0,0" Width="285" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="ipv4" Content="IPv4 Addresses" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="25" Margin="10,0,0,0" Width="285" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="ipv6" Content="IPv6 Addresses" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="25" Margin="10,0,0,0" Width="285" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel x:Name="categoryPanel" HorizontalAlignment="Left" Margin="467,175,0,0" VerticalAlignment="Top" Width="305" Height="89">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Types to run" VerticalAlignment="Top" FontSize="20" Width="285" Height="30" Margin="10,0,0,0"/>
+                            <RadioButton x:Name="requiredEndpoints" Content="Required endpoints" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="endpoints" Height="25" Margin="10,0,0,0" Width="285" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="fullEndpoints" Content="Full (Required + Optional)" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="293" GroupName="endpoints" Height="25" Margin="10,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <TextBox x:Name="categorySelected" HorizontalAlignment="Left" Height="23" Margin="467,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" IsEnabled="False" Visibility="Hidden" />
+
+                        <CheckBox x:Name="offlineMode" Content="Offline mode" HorizontalAlignment="Left" Margin="26,292,0,0" VerticalAlignment="Top" FontSize="20" Height="33" Width="149" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+                        <TextBlock x:Name="offlineDesc" Text="Select this option if there is no connectivity to doc.microsoft.com and gitbub.com. Please consider that this option may reflect the wrong endpoints since is not getting updated data." HorizontalAlignment="Left" Margin="26,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Grid.ColumnSpan="2"/>
+                        <Label Content="Azure Tenant Name" HorizontalAlignment="Left" Margin="312,307,0,0" VerticalAlignment="Top" Width="286" HorizontalContentAlignment="Left" FontSize="16" Height="35" RenderTransformOrigin="0.522,0.888" />
+                        <TextBox x:Name="tenantName" HorizontalAlignment="Left" Height="46" Margin="312,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="30"/>
+                        <!--Run button-->
+                        <Button x:Name="Run" Content="Run" HorizontalAlignment="Left" Margin="603,322,0,0" VerticalAlignment="Top" Width="169" Height="66" FontSize="16" RenderTransformOrigin="0.402,-1.053" IsEnabled="False"/>
+                        <TextBox x:Name="endpointSelected" HorizontalAlignment="Left" Height="23" Margin="26,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" IsEnabled="False" Grid.ColumnSpan="2"  Visibility="Hidden" />
+                    </Grid>
+                </TabItem>
+                <!--Table with the errors on a domain endpoint-->
+                <TabItem x:Name="domainTab" Header="Domain" Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <Grid Background="#FFF" Margin="0,0,0,2">
+                        <RichTextBox x:Name="domainTable" HorizontalAlignment="Left" Height="324" Margin="10,10,0,0"  VerticalAlignment="Top" IsReadOnly="True" Width="518" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type Paragraph}">
+                                    <Setter Property="Margin" Value="0" />
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph>
+                                    <!-- <Run Text="RichTextBox"/> -->
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <Label Content="Total:" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="45" Width="134" FontSize="26" Margin="0,10,119,0" Grid.Column="1"/>
+                        <Label Content="Success:" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="45" Width="134" FontSize="26" Margin="0,55,119,0" Grid.Column="1"/>
+                        <Label Content="Failed:" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="45" Width="134" FontSize="26" Margin="0,100,119,0" Grid.Column="1"/>
+                        <TextBlock x:Name="domainNumTotal" HorizontalAlignment="Left" Margin="663,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="97"/>
+                        <TextBlock x:Name="domainNumSuccess" HorizontalAlignment="Left" Margin="663,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="97"/>
+                        <TextBlock x:Name="domainNumFailed" HorizontalAlignment="Left" Margin="663,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="97"/>
+                        <TextBlock x:Name="domainPingTime" HorizontalAlignment="Left" Margin="576,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="162"/>
+                        <StackPanel x:Name="domainExportPanel" HorizontalAlignment="Left" Margin="576,220,0,0" VerticalAlignment="Top" Width="196" Height="48">
+                            <RadioButton x:Name="domainfailedReport" Content="Failed Endpoint only" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="domainExport" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="domainFullReport" Content="Full Report" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="domainExport" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <Button x:Name="domainBack" Content="Back" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="124" Height="51" FontSize="16"/>
+                        <Button x:Name="domainExport" Content="Export List" Margin="576,268,36,0" VerticalAlignment="Top" Width="169" Height="66" FontSize="16" RenderTransformOrigin="0.402,-1.053" IsEnabled="False"/>
+                        <TextBox x:Name="domainExportSelected" HorizontalAlignment="Left" Height="23" Margin="562,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" IsEnabled="False" Visibility="Hidden"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem x:Name="ipv4Tab" Header="IPv4" Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <Grid Background="#FFF" Margin="0,0,0,2">
+                        <RichTextBox x:Name="ipv4Table" HorizontalAlignment="Left" Height="324" Margin="10,10,0,0"  VerticalAlignment="Top" IsReadOnly="True" Width="518" VerticalScrollBarVisibility="Auto">
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type Paragraph}">
+                                    <Setter Property="Margin" Value="0" />
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph>
+                                    <!-- <Run Text="RichTextBox"/> -->
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <Label Content="Total:" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="45" Width="103" FontSize="26" Margin="0,10,150,0"/>
+                        <TextBlock x:Name="ipv4NumTotal" HorizontalAlignment="Left" Margin="637,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="123"/>
+                        <Label Content="Firewall Formats" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="46" Width="227" FontSize="26" Margin="0,90,22,0"/>
+                        <StackPanel x:Name="ipv4FormatPanel" HorizontalAlignment="Left" Margin="576,141,0,0" VerticalAlignment="Top" Width="196" Height="127">
+                            <RadioButton x:Name="ipv4ATPFormat" Content="Windows Firewall" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv4UbiquitiFormat" Content="Ubiquiti" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv4F5Format" Content="F5" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv4PaloAltoFormat" Content="Palo Alto" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv4CiscoFormat" Content="Cisco" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv4CSVFormat" Content="CSV" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <Button x:Name="ipv4Back" Content="Back" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="124" Height="51" FontSize="16"/>
+                        <Button x:Name="ipv4Export" Content="Export List" Margin="576,268,36,0" VerticalAlignment="Top" Width="169" Height="66" FontSize="16" RenderTransformOrigin="0.402,-1.053" IsEnabled="False"/>
+                        <TextBox x:Name="ipv4FormatSelected" HorizontalAlignment="Left" Height="23" Margin="562,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" IsEnabled="False" Visibility="Hidden"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem x:Name="ipv6Tab" Header="IPv6" Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <Grid Background="#FFF" Margin="0,0,0,2">
+                        <RichTextBox x:Name="ipv6Table" HorizontalAlignment="Left" Height="324" Margin="10,10,0,0"  VerticalAlignment="Top" IsReadOnly="True" Width="518" VerticalScrollBarVisibility="Auto">
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type Paragraph}">
+                                    <Setter Property="Margin" Value="0" />
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph>
+                                    <!-- <Run Text="RichTextBox"/> -->
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <Label Content="Total:" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="45" Width="103" FontSize="26" Margin="0,10,150,0"/>
+                        <TextBlock x:Name="ipv6NumTotal" HorizontalAlignment="Left" Margin="637,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" Width="123"/>
+                        <Label Content="Firewall Formats" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="46" Width="232" FontSize="26" Margin="0,60,22,0"/>
+                        <StackPanel x:Name="ipv6FormatPanel" HorizontalAlignment="Left" Margin="576,141,0,0" VerticalAlignment="Top" Width="196" Height="127">
+                            <RadioButton x:Name="ipv6ATPFormat" Content="Windows Firewall" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv6UbiquitiFormat" Content="Ubiquiti" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv6F5Format" Content="F5" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv6PaloAltoFormat" Content="Palo Alto" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv6CiscoFormat" Content="Cisco" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="ipv6CSVFormat" Content="CSV" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" GroupName="downloadSelector" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <Button x:Name="ipv6Back" Content="Back" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="124" Height="51" FontSize="16"/>
+                        <Button x:Name="ipv6Export" Content="Export List" Margin="576,268,36,0" VerticalAlignment="Top" Width="169" Height="66" FontSize="16" RenderTransformOrigin="0.402,-1.053" IsEnabled="False"/>
+                        <TextBox x:Name="ipv6FormatSelected" HorizontalAlignment="Left" Height="23" Margin="562,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" IsEnabled="False" Visibility="Hidden"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Logging" Style="{DynamicResource ResourceKey=styleTabItemRight}">
+                    <Grid Background="#FFF" Margin="0,0,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="237*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="OutputQueueText" Content="0" HorizontalAlignment="Left" Height="28" Margin="62.638,80,0,0" VerticalAlignment="Top" Width="148" VerticalContentAlignment="Bottom" Padding="2,5,5,5" Grid.Column="1"/>
+                        <RichTextBox x:Name="Logging" HorizontalAlignment="Left" Height="324" Margin="10,10,0,0"  VerticalAlignment="Top" IsReadOnly="True" Width="766" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
+                            <RichTextBox.Resources>
+                                <Style TargetType="{x:Type Paragraph}">
+                                    <Setter Property="Margin" Value="0" />
+                                </Style>
+                            </RichTextBox.Resources>
+                            <FlowDocument>
+                                <Paragraph>
+                                    <!-- <Run Text="RichTextBox"/> -->
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <Button x:Name="loggingBack" Content="Back" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="124" Height="51" FontSize="16" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <!--Progress bar-->
+            <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="20" Margin="130,455,0,0" VerticalAlignment="Top" Width="575"/>
+            <TextBlock x:Name="progressNumber" HorizontalAlignment="Left" Margin="710,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="70" FontSize="26"/>
+            <TextBlock x:Name="progressText" HorizontalAlignment="Left" Margin="130,479,0,14.5" TextWrapping="Wrap" VerticalAlignment="Center" Width="575" Height="24"/>
+            <!--Close button-->
+            <Button x:Name="closeApp" Content="Close" HorizontalAlignment="Left" Margin="10,454,0,0" VerticalAlignment="Top" Width="102" Height="49"/>
+        </Grid>
+    </Border>
+</Window>

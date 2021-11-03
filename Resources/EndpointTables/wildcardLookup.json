@@ -1,0 +1,434 @@
+[
+    {
+        "Wildcard": "*broadcast.officeapps.live.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*excel.officeapps.live.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*onenote.officeapps.live.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*powerpoint.officeapps.live.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*view.officeapps.live.com",
+        "static": "euc-word-"
+    },
+    {
+        "Wildcard": "*visio.officeapps.live.com",
+        "static": "euc-"
+    },
+    {
+        "Wildcard": "*word-edit.officeapps.live.com",
+        "static": "euc-"
+    },
+    {
+        "Wildcard": "*word-view.officeapps.live.com",
+        "static": "euc-"
+    },
+    {
+        "Wildcard": "*.cdn.office.net",
+        "static": "c1-odc-15"
+    },
+    {
+        "Wildcard": "*.onenote.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*cdn.onenote.net",
+        "static": "site-"
+    },
+    {
+        "Wildcard": "*.msappproxy.net",
+        "static": "download"
+    },
+    {
+        "Wildcard": "*.adhybridhealth.azure.com",
+        "static": "s1"
+    },
+    {
+        "Wildcard": "*.blob.core.windows.net",
+        "static": "storagesamples"
+    },
+    {
+        "Wildcard": "*.microsoftonline.com",
+        "static": "login"
+    },
+    {
+        "Wildcard": "*.microsoftonline-p.com",
+        "static": "secure.aadcdn"
+    },
+    {
+        "Wildcard": "*.microsoftonline-p.net",
+        "static": "clientconfig,hip"
+    },
+    {
+        "Wildcard": "*.msecnd.net",
+        "static": "az416426.vo"
+    },
+    {
+        "Wildcard": "*.phonefactor.net",
+        "static": "pfweb"
+    },
+    {
+        "Wildcard": "*.queue.core.windows.net",
+        "static": "myaccount"
+    },
+    {
+        "Wildcard": "*.servicebus.windows.net",
+        "static": "myaccount"
+    },
+    {
+        "Wildcard": "*.table.core.windows.net",
+        "static": "myaccount"
+    },
+    {
+        "Wildcard": "*.windows.net",
+        "static": "accesscontrol"
+    },
+    {
+        "Wildcard": "*.manage.office.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.protection.office.com",
+        "static": "na01.safelinks"
+    },
+    {
+        "Wildcard": "*.portal.cloudappsecurity.com",
+        "static": "contoso"
+    },
+    {
+        "Wildcard": "*.aria.microsoft.com",
+        "static": "mobile.pipe"
+    },
+    {
+        "Wildcard": "*.o365weve.com",
+        "static": "agavecdn"
+    },
+    {
+        "Wildcard": "*.office365.com",
+        "static": "outlook"
+    },
+    {
+        "Wildcard": "*.aadrm.com",
+        "static": "discover,api"
+    },
+    {
+        "Wildcard": "*.azurerms.com",
+        "static": "track"
+    },
+    {
+        "Wildcard": "*.entrust.net",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.geotrust.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.omniroot.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.public-trust.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.symcb.com",
+        "static": "t2"
+    },
+    {
+        "Wildcard": "*.symcd.com",
+        "static": "t2"
+    },
+    {
+        "Wildcard": "*.verisign.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.verisign.net",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.loki.delve.office.com",
+        "static": "eur"
+    },
+    {
+        "Wildcard": "*.outlook.office.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.store.core.windows.net",
+        "static": null
+    },
+    {
+        "Wildcard": "*.outlook.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.protection.outlook.com",
+        "static": "mail"
+    },
+    {
+        "Wildcard": "*.mail.protection.outlook.com",
+        "static": "microsoft-com"
+    },
+    {
+        "Wildcard": "*.lync.com",
+        "static": "cqd"
+    },
+    {
+        "Wildcard": "*.teams.microsoft.com",
+        "static": "emea.ng.msg"
+    },
+    {
+        "Wildcard": "*.broadcast.skype.com",
+        "static": "join-emea"
+    },
+    {
+        "Wildcard": "*.sfbassets.com",
+        "static": "meetings"
+    },
+    {
+        "Wildcard": "*.urlp.sfbassets.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.keydelivery.mediaservices.windows.net",
+        "static": "amsaccount1"
+    },
+    {
+        "Wildcard": "*.streaming.mediaservices.windows.net",
+        "static": "amssamples"
+    },
+    {
+        "Wildcard": "*.users.storage.live.com",
+        "static": "cid-2699efb5f4d57d36"
+    },
+    {
+        "Wildcard": "*.adl.windows.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.skypeforbusiness.com",
+        "static": "partnersolutions"
+    },
+    {
+        "Wildcard": "*.msedge.net",
+        "static": "a-0011.a"
+    },
+    {
+        "Wildcard": "*.mstea.ms",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.secure.skypeassets.com",
+        "static": "static-asm"
+    },
+    {
+        "Wildcard": "*.tenor.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.sharepoint.com",
+        "static": "basevision"
+    },
+    {
+        "Wildcard": "*.log.optimizely.com",
+        "static": "14590122.log.optimizely.com"
+    },
+    {
+        "Wildcard": "*.search.production.apac.trafficmanager.net",
+        "static": null
+    },
+    {
+        "Wildcard": "*.search.production.emea.trafficmanager.net",
+        "static": null
+    },
+    {
+        "Wildcard": "*.search.production.us.trafficmanager.net",
+        "static": null
+    },
+    {
+        "Wildcard": "*.sharepointonline.com",
+        "static": "static2"
+    },
+    {
+        "Wildcard": "*.svc.ms",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*-files.sharepoint.com",
+        "static": "contoso"
+    },
+    {
+        "Wildcard": "*-myfiles.sharepoint.com",
+        "static": "contoso"
+    },
+    {
+        "Wildcard": "*.api.microsoftstream.com",
+        "static": "euno-1"
+    },
+    {
+        "Wildcard": "*.cloudapp.net",
+        "static": "calcapi"
+    },
+    {
+        "Wildcard": "*.notification.api.microsoftstream.com",
+        "static": "auea-1"
+    },
+    {
+        "Wildcard": "*.azureedge.net",
+        "static": "ampdemo"
+    },
+    {
+        "Wildcard": "*.media.azure.net",
+        "static": "amshelloworld.restv2.westus"
+    },
+    {
+        "Wildcard": "*.microsoft.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.office.net",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.helpshift.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.localytics.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.hockeyapp.net",
+        "static": "rink"
+    },
+    {
+        "Wildcard": "*.staffhub.office.com",
+        "static": "api"
+    },
+    {
+        "Wildcard": "*.msocdn.com",
+        "static": "prod"
+    },
+    {
+        "Wildcard": "*.office.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.onmicrosoft.com",
+        "static": "contoso"
+    },
+    {
+        "Wildcard": "*.acompli.net",
+        "static": "prod-nam-autodetect"
+    },
+    {
+        "Wildcard": "*.outlookmobile.com",
+        "static": "prod-collecticon"
+    },
+    {
+        "Wildcard": "*.outlookmobile.us",
+        "static": "prod1-api.gcc"
+    },
+    {
+        "Wildcard": "*.appex.bing.com",
+        "static": "finance.services"
+    },
+    {
+        "Wildcard": "*.appex-rf.msn.com",
+        "static": "en-us"
+    },
+    {
+        "Wildcard": "*.itunes.apple.com",
+        "static": "finace-app"
+    },
+    {
+        "Wildcard": "*.yammer.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.yammerusercontent.com",
+        "static": "files"
+    },
+    {
+        "Wildcard": "*.skype.com",
+        "static": "www"
+    },
+    {
+        "Wildcard": "*.officeconfig.msocdn.com",
+        "static": "neu"
+    },
+    {
+        "Wildcard": "*.msauth.net",
+        "static": "aadcdn"
+    },
+    {
+        "Wildcard": "*.msauthimages.net",
+        "static": "aadcdn"
+    },
+    {
+        "Wildcard": "*.msftauth.net",
+        "static": "ccscdn"
+    },
+    {
+        "Wildcard": "*.msftauthimages.net",
+        "static": "aadcdn"
+    },
+    {
+        "Wildcard": "*.manage.microsoft.com",
+        "static": "portal"
+    },
+    {
+        "Wildcard": "*.assets-yammer.com",
+        "static": "mug0"
+    },
+    {
+        "Wildcard": "*rtc.officeapps.live.com",
+        "static": "sg1-"
+    },
+    {
+        "Wildcard": "*shared.officeapps.live.com",
+        "static": "ff1dso-"
+    },
+    {
+        "Wildcard": "*.msftidentity.com",
+        "static": "aws.prdv6.e.aadg"
+    },
+    {
+        "Wildcard": "*.msidentity.com",
+        "static": "prda.aadg"
+    },
+    {
+        "Wildcard": "*.events.data.microsoft.com",
+        "static": "v10c"
+    },
+    {
+        "Wildcard": "*.informationprotection.azure.com",
+        "static": "api"
+    },
+    {
+        "Wildcard": "*.measure.office.com",
+        "static": "upload2.fp"
+    },
+    {
+        "Wildcard": "*.wns.windows.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.online.office.com",
+        "static": null
+    },
+    {
+        "Wildcard": "*.config.office.net",
+        "static": null
+    }
+]
